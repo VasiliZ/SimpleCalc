@@ -1,0 +1,23 @@
+*.apk
+*.dex
+*.class
+bin/
+gen/
+out/
+.gradle/
+build/
+local.properties
+proguard/
+# Log Files
+*.log
+.navigation/
+captures/
+.idea/
+*.jks
+.externalNativeBuild
+google-services.json
+freeline.py
+freeline/
+freeline_project_description.json
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
