@@ -48,12 +48,11 @@ public class CalcViewModel extends AndroidViewModel {
     void doBackspace() {
         if (stringBuilder.toString().isEmpty()) {
             return;
+        }else {
+
+            stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
+            liveData.setValue(stringBuilder.toString());
         }
-
-        stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
-        calculateString.delete(calculateString.length() - 1, calculateString.length());
-        liveData.setValue(stringBuilder.toString());
-
     }
 
     void clearBuffer() {
@@ -147,7 +146,6 @@ public class CalcViewModel extends AndroidViewModel {
                                         .getResources()
                                         .getString(R.string.error));
                                 strings.clear();
-
                                 break;
                             }
                             final String total = String.valueOf(op2 / op1);
