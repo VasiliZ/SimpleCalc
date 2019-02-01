@@ -11,7 +11,7 @@
         android:top="1dp"
         android:right="1dp">   <!-- adjust borders width here -->
         <shape android:shape="rectangle">
-            <solid android:color="#FFA500" />  <!-- background color -->
+            <solid android:color="#FFFFFF" />  <!-- background color -->
         </shape>
     </item>
 </layer-list>

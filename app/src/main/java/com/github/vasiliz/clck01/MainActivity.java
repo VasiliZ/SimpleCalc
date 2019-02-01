@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -101,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                calcViewModel.setClick("-");
+                calcViewModel.setMinusForNumber("-");
             }
         });
 
@@ -150,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 calcViewModel.onAction(getResources().getString(R.string.plus));
             }
         });
-        findViewById(R.id.equalsign_button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.equal_sign_button).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(final View v) {

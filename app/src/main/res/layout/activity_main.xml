@@ -25,7 +25,6 @@
         android:id="@+id/view_input_textview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/border"
         android:gravity="bottom"
         android:paddingBottom="8dp"
         android:paddingEnd="8dp"
@@ -40,16 +39,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintGuide_percent="0.6"/>
 
     <Button
         android:id="@+id/input_seven_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/seven"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
@@ -58,12 +57,12 @@
 
     <Button
         android:id="@+id/input_eight_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/eight"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toLeftOf="@id/guideline2"
@@ -72,12 +71,12 @@
 
     <Button
         android:id="@+id/input_nine_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/nine"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintLeft_toLeftOf="@id/guideline2"
         app:layout_constraintRight_toLeftOf="@id/guideline3"
@@ -86,12 +85,14 @@
 
     <Button
         android:id="@+id/multiply_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/multiply"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="439dp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintLeft_toLeftOf="@id/guideline3"
         app:layout_constraintRight_toRightOf="parent"
@@ -100,12 +101,12 @@
 
     <Button
         android:id="@+id/input_four_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/four"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
@@ -114,12 +115,12 @@
 
     <Button
         android:id="@+id/input_five_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/five"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toLeftOf="@id/guideline2"
@@ -128,12 +129,12 @@
 
     <Button
         android:id="@+id/input_six_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/six"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintLeft_toLeftOf="@id/guideline2"
         app:layout_constraintRight_toLeftOf="@id/guideline3"
@@ -142,12 +143,12 @@
 
     <Button
         android:id="@+id/minus_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/minus"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintLeft_toLeftOf="@id/guideline3"
         app:layout_constraintRight_toRightOf="parent"
@@ -156,12 +157,12 @@
 
     <Button
         android:id="@+id/input_one_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/one"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
@@ -170,12 +171,12 @@
 
     <Button
         android:id="@+id/input_two_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/two"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toLeftOf="@id/guideline2"
@@ -184,12 +185,12 @@
 
     <Button
         android:id="@+id/input_three_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/three"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintLeft_toLeftOf="@id/guideline2"
         app:layout_constraintRight_toLeftOf="@id/guideline3"
@@ -198,12 +199,12 @@
 
     <Button
         android:id="@+id/plus_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/plus"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintLeft_toLeftOf="@id/guideline3"
         app:layout_constraintRight_toRightOf="parent"
@@ -212,12 +213,12 @@
 
     <Button
         android:id="@+id/input_zero_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/zero"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toLeftOf="@id/guideline2"
@@ -226,12 +227,12 @@
 
     <Button
         android:id="@+id/input_button_dot"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/height_weight_0dp"
         android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/dot"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guideline2"
         app:layout_constraintRight_toLeftOf="@id/guideline3"
@@ -239,13 +240,15 @@
     </Button>
 
     <Button
-        android:id="@+id/equalsign_button"
+        android:id="@+id/equal_sign_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/equal_sign"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
+        android:textColor="@android:color/white"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guideline3"
         app:layout_constraintRight_toRightOf="parent"
@@ -256,10 +259,9 @@
         android:id="@+id/plus_minus_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
-        android:textSize="30sp"
-        android:src="@drawable/icon"
+        android:src="@drawable/plus_minus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
@@ -270,10 +272,11 @@
         android:id="@+id/clear_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/clear"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
+        android:textColor="#ffa500"
         app:layout_constraintBottom_toTopOf="@id/guideline7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
@@ -284,10 +287,9 @@
         android:id="@+id/backspace_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:src="@drawable/ic_backspace_black_24dp"
-        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/guideline7"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toLeftOf="@id/guideline2"
@@ -298,10 +300,9 @@
         android:id="@+id/percent_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
-
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline7"
         app:layout_constraintLeft_toLeftOf="@id/guideline2"
         app:layout_constraintRight_toLeftOf="@id/guideline3"
@@ -310,12 +311,12 @@
 
     <Button
         android:id="@+id/divide_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/border"
+        android:layout_width="@dimen/height_weight_0dp"
+        android:layout_height="@dimen/height_weight_0dp"
+        android:background="@drawable/other_border"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/divide"
-        android:textSize="30sp"
+        android:textSize="@dimen/number_size_20sp"
         app:layout_constraintBottom_toTopOf="@id/guideline7"
         app:layout_constraintLeft_toLeftOf="@id/guideline3"
         app:layout_constraintRight_toRightOf="parent"
@@ -349,35 +350,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55"/>
+        app:layout_constraintGuide_percent="0.7"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7"/>
+        app:layout_constraintGuide_percent="0.8"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85"/>
+        app:layout_constraintGuide_percent="0.9"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.5"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.3"/>
 
 
 </android.support.constraint.ConstraintLayout>

@@ -22,6 +22,7 @@ public class CalcViewModel extends AndroidViewModel {
     private final String[] operators = {"+", "-", "/", "*"};
     private final String EMPTY_STRING = "";
     private final String END_DOUBLE_VALUE = ".0";
+    private boolean isCalculate;
 
     private final Stack<String> stackP = new Stack<>();
     private final Stack<String> operations = new Stack<>();
@@ -34,12 +35,21 @@ public class CalcViewModel extends AndroidViewModel {
     //todo action here
 
     void setClick(final String action) {
-        calculateString.append(action);
-        stringBuilder.append(action);
-        liveData.setValue(stringBuilder.toString());
+        if (isCalculate) {
+            isCalculate = false;
+            tempValues.setValue(calculateString.toString());
+            liveData.setValue(stringBuilder.toString());
+        }else {
+            stringBuilder.append(action);
+            liveData.setValue(stringBuilder.toString());
+        }
     }
 
     void doBackspace() {
+        if (stringBuilder.toString().isEmpty()) {
+            return;
+        }
+
         stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
         calculateString.delete(calculateString.length() - 1, calculateString.length());
         liveData.setValue(stringBuilder.toString());
@@ -47,42 +57,68 @@ public class CalcViewModel extends AndroidViewModel {
     }
 
     void clearBuffer() {
-        stringBuilder.delete(0, stringBuilder.length());
-        calculateString.delete(0, calculateString.length());
+        clearStringBuilder(stringBuilder);
+        clearStringBuilder(calculateString);
         strings.clear();
         liveData.setValue(stringBuilder.toString());
         tempValues.setValue(calculateString.toString());
     }
 
     void onAction(final String action) {
-        strings.add(stringBuilder.toString());
-        if (calculateString.toString().endsWith(action)) {
+        if (calculateString.toString().endsWith(action) | (calculateString.toString().isEmpty()&&stringBuilder.toString().isEmpty())) {
             return;
         }
+        calculateString.append(stringBuilder);
+        strings.add(stringBuilder.toString());
         calculateString.append(action);
         tempValues.setValue(calculateString.toString());
-        stringBuilder.delete(0, stringBuilder.length());
+        clearStringBuilder(stringBuilder);
         liveData.setValue(stringBuilder.toString());
         strings.add(action);
     }
 
     public void setDot(final String dot) {
+        if (stringBuilder.toString().isEmpty()){
+            return;
+        }
         if (!stringBuilder.toString().contains(getApplication()
                 .getResources()
                 .getString(R.string.dot))) {
             stringBuilder.append(dot);
-            calculateString.append(dot);
             liveData.setValue(stringBuilder.toString());
         }
     }
 
+    public void setMinusForNumber(final String minus) {
+        if (!stringBuilder.toString().isEmpty()) {
+            if (!stringBuilder.toString().isEmpty()
+                    && stringBuilder.toString().startsWith(getApplication().getResources().getString(R.string.minus))) {
+                stringBuilder.delete(0, 1);
+
+                liveData.setValue(stringBuilder.toString());
+                return;
+            }
+            stringBuilder.insert(0, minus);
+            liveData.postValue(stringBuilder.toString());
+        }
+
+    }
+
     void calculate() {
-        if (strings == null) {
+        if (strings.isEmpty()) {
             return;
         }
+
         strings.add(stringBuilder.toString());
         tempValues.setValue(calculateString.toString());
+        if (strings.get(strings.size()-1).equals(EMPTY_STRING)) {
+            return;
+        }
 
+        if (isOperator(strings.get(strings.size() - 1))) {
+            strings.remove(strings.get(strings.size() - 1));
+            strings.trimToSize();
+        }
         convertToRPN(strings);
         calculationStack.clear();
         Collections.reverse(stackP);
@@ -121,18 +157,22 @@ public class CalcViewModel extends AndroidViewModel {
                 }
             }
             final String result = calculationStack.pop();
-            final String cutString;
+            String cutString = "";
             if (result.endsWith(END_DOUBLE_VALUE)) {
                 cutString = result.substring(0, result.lastIndexOf(getApplication()
                         .getResources()
                         .getString(R.string.dot)));
                 liveData.setValue(cutString);
-            }else {
+            } else {
                 liveData.setValue(result);
             }
 
+            clearStringBuilder(stringBuilder);
+            clearStringBuilder(calculateString);
+            calculateString.append(cutString);
             strings.clear();
-            tempValues.setValue(EMPTY_STRING);
+            strings.add(cutString);
+            isCalculate = true;
 
         } catch (final EmptyStackException e) {
             liveData.setValue(getApplication().getResources().getString(R.string.error));
@@ -190,6 +230,10 @@ public class CalcViewModel extends AndroidViewModel {
         } else {
             return 2;
         }
+    }
+
+    public void clearStringBuilder(StringBuilder stringBuffer) {
+        stringBuffer.delete(0, stringBuffer.length());
     }
 }
 
