@@ -39,10 +39,10 @@ public class CalcViewModel extends AndroidViewModel {
             isCalculate = false;
             tempValues.setValue(calculateString.toString());
             liveData.setValue(stringBuilder.toString());
-        }else {
+        }
             stringBuilder.append(action);
             liveData.setValue(stringBuilder.toString());
-        }
+
     }
 
     void doBackspace() {
