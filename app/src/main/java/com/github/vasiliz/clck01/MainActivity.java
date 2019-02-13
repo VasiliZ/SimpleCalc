@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                calcViewModel.setMinusForNumber("-");
+                calcViewModel.setMinusForNumber(getResources().getString(R.string.minus));
             }
         });
 
