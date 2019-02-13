@@ -40,15 +40,15 @@ public class CalcViewModel extends AndroidViewModel {
             tempValues.setValue(calculateString.toString());
             liveData.setValue(stringBuilder.toString());
         }
-            stringBuilder.append(action);
-            liveData.setValue(stringBuilder.toString());
+        stringBuilder.append(action);
+        liveData.setValue(stringBuilder.toString());
 
     }
 
     void doBackspace() {
         if (stringBuilder.toString().isEmpty()) {
             return;
-        }else {
+        } else {
 
             stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
             liveData.setValue(stringBuilder.toString());
@@ -64,7 +64,7 @@ public class CalcViewModel extends AndroidViewModel {
     }
 
     void onAction(final String action) {
-        if (calculateString.toString().endsWith(action) | (calculateString.toString().isEmpty()&&stringBuilder.toString().isEmpty())) {
+        if (calculateString.toString().endsWith(action) | (calculateString.toString().isEmpty() && stringBuilder.toString().isEmpty())) {
             return;
         }
         calculateString.append(stringBuilder);
@@ -77,7 +77,7 @@ public class CalcViewModel extends AndroidViewModel {
     }
 
     public void setDot(final String dot) {
-        if (stringBuilder.toString().isEmpty()){
+        if (stringBuilder.toString().isEmpty()) {
             return;
         }
         if (!stringBuilder.toString().contains(getApplication()
@@ -110,7 +110,7 @@ public class CalcViewModel extends AndroidViewModel {
 
         strings.add(stringBuilder.toString());
         tempValues.setValue(calculateString.toString());
-        if (strings.get(strings.size()-1).equals(EMPTY_STRING)) {
+        if (strings.get(strings.size() - 1).equals(EMPTY_STRING)) {
             return;
         }
 
@@ -118,6 +118,9 @@ public class CalcViewModel extends AndroidViewModel {
             strings.remove(strings.get(strings.size() - 1));
             strings.trimToSize();
         }
+
+        calculateString.append(stringBuilder);
+        tempValues.setValue(calculateString.toString());
         convertToRPN(strings);
         calculationStack.clear();
         Collections.reverse(stackP);
